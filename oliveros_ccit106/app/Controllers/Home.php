@@ -18,4 +18,9 @@ class Home extends BaseController
     {
         return view('register');
     }
+    public function user(): string
+    {
+        return view('user');
+    }
+    
 }
