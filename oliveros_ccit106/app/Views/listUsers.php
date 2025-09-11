@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <?php if(session()->getFlashdata('success')): ?>
+        <p style="color: green;"><?php echo session()->getFlashdata('success'); ?></p>
+    <?php endif; ?>
    <h1>List of users</h1> 
     <table border="1">
          <tr>
