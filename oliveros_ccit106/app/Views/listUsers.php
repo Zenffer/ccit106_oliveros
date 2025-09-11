@@ -13,6 +13,7 @@
               <th>First Name</th>
               <th>Middle Name</th>
               <th>Last Name</th>
+              <th>Actions</th>
          </tr>
             <?php foreach($users as $user): ?>
             <tr>
@@ -20,6 +21,10 @@
                 <td><?= $user['firstName']; ?></td>
                 <td><?= $user['middleName']; ?></td>
                 <td><?= $user['lastName']; ?></td>
+                <td>
+                    <a href="#">Edit</a> 
+                    <a href="<?= base_url('user/delete/'.$user['id']); ?>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                </td>
             </tr>
             <?php endforeach; ?>
     </table>

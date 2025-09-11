@@ -12,3 +12,4 @@ $routes->get('register', 'register::register');
 $routes->get('user/create', 'User::create');
 $routes->post('user/store', 'User::store');
 $routes->get('user/list', 'User::list');
+$routes->get('user/delete/(:num)', 'User::delete/$1');

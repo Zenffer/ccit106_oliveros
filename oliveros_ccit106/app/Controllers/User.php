@@ -19,6 +19,13 @@ class User extends BaseController
         return view('listUsers', $data);
     }
 
+        public function delete($id)
+    {
+        $userModel = new \App\Models\User();
+        $userModel->delete($id);
+        return redirect()->to('user/list')->with('success', 'User deleted successfully');
+    }
+    
     public function store()
     {
         $userModel = new UserModel();
@@ -33,4 +40,5 @@ class User extends BaseController
 
         return redirect()->to('user/list')->with('success', 'User created successfully');
     }
+
 }
