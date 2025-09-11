@@ -11,6 +11,13 @@ class User extends BaseController
     {
         return view('createUser');
     }
+    public function list()
+    {
+        $userModel = new UserModel();
+        $data['users'] = $userModel->findAll();
+
+        return view('listUsers', $data);
+    }
 
     public function store()
     {
@@ -24,6 +31,6 @@ class User extends BaseController
 
         $userModel->insert($data);
 
-        return redirect()->to('/')->with('success', 'User created successfully');
+        return redirect()->to('user/list')->with('success', 'User created successfully');
     }
 }
